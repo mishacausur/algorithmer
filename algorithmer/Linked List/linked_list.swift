@@ -30,12 +30,44 @@ public struct LinkedList<Value> {
     }
     
     public init() {}
-    
+    /// O(1)
     public mutating func push(_ value: Value) {
         head = Node(value: value, next: head)
         if tail == nil {
             tail = head
         }
+    }
+    /// O(1)
+    public mutating func append(_ value: Value) {
+        guard !isEmpty else {
+            push(value)
+            return
+        }
+        
+        tail!.next = Node(value: value)
+        tail = tail!.next
+    }
+    /// O(n)
+    public func node(_ index: Int) -> Node<Value>? {
+        var currentNode = head
+        var currentIndex = 0
+        
+        while currentNode != nil && currentIndex < index {
+            currentNode = currentNode!.next
+            currentIndex += 1
+        }
+        
+        return currentNode
+    }
+    /// O(1)
+    public mutating func insert(_ value: Value, after node: Node<Value>) -> Node<Value> {
+        guard tail !== node else {
+            append(value)
+            return tail!
+        }
+        node.next = Node(value: value, next: node.next)
+        return node.next!
+        
     }
 }
 
@@ -73,4 +105,43 @@ extension Example {
         print(node1)
     }
    
+    func nodeExample2() {
+        var linkedList = LinkedList<Int>()
+        linkedList.push(3)
+        linkedList.push(2)
+        linkedList.push(1)
+        
+        print(linkedList)
+    }
+    
+    func nodeExample3() {
+       var linkedList = LinkedList<Int>()
+        linkedList.append(1)
+        linkedList.append(2)
+        linkedList.append(3)
+        
+        print(linkedList)
+    }
+    
+    func nodeExample4() {
+       var linkedList = LinkedList<Int>()
+        linkedList.append(1)
+        linkedList.append(2)
+        linkedList.append(3)
+        print(linkedList.node(6))
+    }
+    
+    func nodeExample5() {
+        var linkedList = LinkedList<Int>()
+        linkedList.push(3)
+        linkedList.push(2)
+        linkedList.push(1)
+        
+        print("Before inserting: \(linkedList)")
+        var middle = linkedList.node(1)!
+        for _ in 1...4 {
+            middle = linkedList.insert(-1, after: middle)
+        }
+        print("After inserting: \(linkedList)")
+    }
 }
