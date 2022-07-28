@@ -11,6 +11,7 @@
 		B613D3242892F1700098351F /* stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D3232892F1700098351F /* stack.swift */; };
 		B613D3272892F35A0098351F /* examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D3262892F35A0098351F /* examples.swift */; };
 		B613D3292892F95C0098351F /* challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D3282892F95C0098351F /* challenges.swift */; };
+		B613D32C28930B470098351F /* linked_list.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D32B28930B470098351F /* linked_list.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,7 @@
 		B613D3232892F1700098351F /* stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stack.swift; sourceTree = "<group>"; };
 		B613D3262892F35A0098351F /* examples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = examples.swift; sourceTree = "<group>"; };
 		B613D3282892F95C0098351F /* challenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenges.swift; sourceTree = "<group>"; };
+		B613D32B28930B470098351F /* linked_list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = linked_list.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,9 @@
 			children = (
 				B613D31C2892F1610098351F /* main.swift */,
 				B613D3252892F34C0098351F /* Stack */,
+				B613D32A2892FDF80098351F /* Linked List */,
+				B613D32E28930D420098351F /* Challenges */,
+				B613D32D28930D3A0098351F /* Examples */,
 			);
 			path = algorithmer;
 			sourceTree = "<group>";
@@ -73,10 +78,32 @@
 			isa = PBXGroup;
 			children = (
 				B613D3232892F1700098351F /* stack.swift */,
-				B613D3282892F95C0098351F /* challenges.swift */,
-				B613D3262892F35A0098351F /* examples.swift */,
 			);
 			path = Stack;
+			sourceTree = "<group>";
+		};
+		B613D32A2892FDF80098351F /* Linked List */ = {
+			isa = PBXGroup;
+			children = (
+				B613D32B28930B470098351F /* linked_list.swift */,
+			);
+			path = "Linked List";
+			sourceTree = "<group>";
+		};
+		B613D32D28930D3A0098351F /* Examples */ = {
+			isa = PBXGroup;
+			children = (
+				B613D3262892F35A0098351F /* examples.swift */,
+			);
+			path = Examples;
+			sourceTree = "<group>";
+		};
+		B613D32E28930D420098351F /* Challenges */ = {
+			isa = PBXGroup;
+			children = (
+				B613D3282892F95C0098351F /* challenges.swift */,
+			);
+			path = Challenges;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +168,7 @@
 				B613D3292892F95C0098351F /* challenges.swift in Sources */,
 				B613D3242892F1700098351F /* stack.swift in Sources */,
 				B613D31D2892F1610098351F /* main.swift in Sources */,
+				B613D32C28930B470098351F /* linked_list.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
