@@ -13,5 +13,6 @@ let example = Example()
 
 
 let changelles = Challenges()
-changelles.task1(changelles.array)
+//changelles.task1(changelles.array)
+print(changelles.task2(changelles.testString1))
 
