@@ -8,5 +8,10 @@
 import Foundation
 
 let example = Example()
-example.stackExample()
+//example.stackExample()
+
+
+
+let changelles = Challenges()
+changelles.task1(changelles.array)
 

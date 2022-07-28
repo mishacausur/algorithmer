@@ -10,6 +10,7 @@
 		B613D31D2892F1610098351F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D31C2892F1610098351F /* main.swift */; };
 		B613D3242892F1700098351F /* stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D3232892F1700098351F /* stack.swift */; };
 		B613D3272892F35A0098351F /* examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D3262892F35A0098351F /* examples.swift */; };
+		B613D3292892F95C0098351F /* challenges.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D3282892F95C0098351F /* challenges.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -29,6 +30,7 @@
 		B613D31C2892F1610098351F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B613D3232892F1700098351F /* stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stack.swift; sourceTree = "<group>"; };
 		B613D3262892F35A0098351F /* examples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = examples.swift; sourceTree = "<group>"; };
+		B613D3282892F95C0098351F /* challenges.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = challenges.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 			isa = PBXGroup;
 			children = (
 				B613D3232892F1700098351F /* stack.swift */,
+				B613D3282892F95C0098351F /* challenges.swift */,
 				B613D3262892F35A0098351F /* examples.swift */,
 			);
 			path = Stack;
@@ -135,6 +138,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B613D3272892F35A0098351F /* examples.swift in Sources */,
+				B613D3292892F95C0098351F /* challenges.swift in Sources */,
 				B613D3242892F1700098351F /* stack.swift in Sources */,
 				B613D31D2892F1610098351F /* main.swift in Sources */,
 			);
