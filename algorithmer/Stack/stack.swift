@@ -16,6 +16,11 @@ public struct Stack<Element> {
     public mutating func push(_ element: Element) {
         storage.append(element)
     }
+    
+    @discardableResult
+    public mutating func pop() -> Element? {
+        storage.popLast()
+    }
 }
 
 extension Stack: CustomDebugStringConvertible {

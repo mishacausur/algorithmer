@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		B613D31D2892F1610098351F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D31C2892F1610098351F /* main.swift */; };
 		B613D3242892F1700098351F /* stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D3232892F1700098351F /* stack.swift */; };
+		B613D3272892F35A0098351F /* examples.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D3262892F35A0098351F /* examples.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -27,6 +28,7 @@
 		B613D3192892F1610098351F /* algorithmer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = algorithmer; sourceTree = BUILT_PRODUCTS_DIR; };
 		B613D31C2892F1610098351F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		B613D3232892F1700098351F /* stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = stack.swift; sourceTree = "<group>"; };
+		B613D3262892F35A0098351F /* examples.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = examples.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,9 +62,18 @@
 			isa = PBXGroup;
 			children = (
 				B613D31C2892F1610098351F /* main.swift */,
-				B613D3232892F1700098351F /* stack.swift */,
+				B613D3252892F34C0098351F /* Stack */,
 			);
 			path = algorithmer;
+			sourceTree = "<group>";
+		};
+		B613D3252892F34C0098351F /* Stack */ = {
+			isa = PBXGroup;
+			children = (
+				B613D3232892F1700098351F /* stack.swift */,
+				B613D3262892F35A0098351F /* examples.swift */,
+			);
+			path = Stack;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,6 +134,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B613D3272892F35A0098351F /* examples.swift in Sources */,
 				B613D3242892F1700098351F /* stack.swift in Sources */,
 				B613D31D2892F1610098351F /* main.swift in Sources */,
 			);
