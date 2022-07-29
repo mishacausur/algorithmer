@@ -33,7 +33,9 @@ public struct LinkedList<Value> {
     
     /// COW implementation
     private mutating func copy() {
-        
+        guard !isKnownUniquelyReferenced(&head) else {
+            return
+        }
         guard var oldNode = head else {
             return
         }
@@ -325,13 +327,15 @@ extension Example {
         var linkedList = LinkedList<Int>()
         linkedList.append(1)
         linkedList.append(2)
+        print("linkedList uniquely referenced: \(isKnownUniquelyReferenced(&linkedList.head))")
         var linkedList2 = linkedList
         print("linkedList: \(linkedList)")
         print("linkedList2: \(linkedList2)")
         
         print("After mutating")
+        print("linkedList uniquely referenced: \(isKnownUniquelyReferenced(&linkedList.head))")
         linkedList2.append(3)
-        print("List1: \(linkedList)")
-        print("List2: \(linkedList2)")
+        print("linkedList: \(linkedList)")
+        print("linkedList2: \(linkedList2)")
     }
 }
