@@ -108,6 +108,18 @@ public struct LinkedList<Value> {
         tail = previous
         return current.value
     }
+    
+    @discardableResult
+    public mutating func removeAfter(_ node: Node<Value>) -> Value? {
+        defer {
+            if node.next === tail {
+                tail = node
+            }
+        }
+        node.next = node.next?.next
+        return node.next?.value
+    }
+    
 }
 
 extension LinkedList: CustomStringConvertible {
@@ -118,8 +130,56 @@ extension LinkedList: CustomStringConvertible {
         }
         return String(describing: head)
     }
+}
+
+extension LinkedList: Collection {
+   
+    public var startIndex: Index {
+       Index(node: head)
+    }
     
+    public var endIndex: Index {
+        Index(node: tail?.next)
+    }
     
+    public func index(after i: Index) -> Index {
+        Index(node: i.node?.next)
+    }
+    
+    public subscript(position: Index) -> Value {
+        position.node!.value
+    }
+    
+    public struct Index: Comparable {
+       
+        public var node: Node<Value>?
+        
+        public static func == (lhs: LinkedList<Value>.Index, rhs: LinkedList<Value>.Index) -> Bool {
+            
+            switch (lhs.node, rhs.node) {
+                
+            case let (left?, right?):
+                return left.next === right.next
+                
+            case (nil, nil):
+                return true
+                
+            default:
+                return false
+            }
+        }
+        
+        public static func < (lhs: LinkedList<Value>.Index, rhs: LinkedList<Value>.Index) -> Bool {
+            
+            guard lhs != rhs else {
+                return false
+            }
+            
+            let nodes = sequence(first: lhs.node) { $0?.next }
+            
+            return nodes.contains { $0 === rhs.node }
+        }
+    }
 }
 
 extension Node: CustomStringConvertible {
@@ -205,5 +265,35 @@ extension Example {
         
         print("After remove: \(linkedList)")
         print("Removed value: " + String(describing: removed))
+    }
+    
+    func nodeExample8() {
+        var linkedList = LinkedList<Int>()
+        linkedList.push(3)
+        linkedList.push(2)
+        linkedList.push(1)
+
+          print("Before remove: \(linkedList)")
+          let index = 1
+          let node = linkedList.node(index - 1)!
+          let removed = linkedList.removeAfter(node)
+
+          print("After remove at \(index): \(linkedList)")
+          print("Removed value: " + String(describing: removed))
+    }
+    
+    func nodeExample9() {
+        var linkedList = LinkedList<Int>()
+          for i in 0...9 {
+              linkedList.append(i)
+          }
+
+          print("linkedList: \(linkedList)")
+          print("First element: \(linkedList[linkedList.startIndex])")
+          print("Array containing first 3 elements: \(Array(linkedList.prefix(3)))")
+          print("Array containing last 3 elements: \(Array(linkedList.suffix(3)))")
+
+          let sum = linkedList.reduce(0, +)
+          print("Sum of all values: \(sum)")
     }
 }

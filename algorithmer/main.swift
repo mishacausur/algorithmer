@@ -9,7 +9,7 @@ import Foundation
 
 let example = Example()
 //example.stackExample()
-example.nodeExample7()
+example.nodeExample9()
 
 
 let changelles = Challenges()
