@@ -31,8 +31,28 @@ public struct LinkedList<Value> {
     
     public init() {}
     
+    /// COW implementation
+    private mutating func copy() {
+        
+        guard var oldNode = head else {
+            return
+        }
+        
+        head = Node(value: oldNode.value)
+        var newNode = head
+        
+        while let nextOldNode = oldNode.next {
+            newNode?.next = Node(value: nextOldNode.value)
+            newNode = newNode?.next
+            oldNode = nextOldNode
+        }
+        
+        tail = newNode
+    }
+    
     /// O(1)
     public mutating func push(_ value: Value) {
+        copy()
         head = Node(value: value, next: head)
         if tail == nil {
             tail = head
@@ -41,6 +61,7 @@ public struct LinkedList<Value> {
     
     /// O(1)
     public mutating func append(_ value: Value) {
+        copy()
         guard !isEmpty else {
             push(value)
             return
@@ -65,6 +86,7 @@ public struct LinkedList<Value> {
     
     /// O(1)
     public mutating func insert(_ value: Value, after node: Node<Value>) -> Node<Value> {
+        copy()
         guard tail !== node else {
             append(value)
             return tail!
@@ -77,6 +99,7 @@ public struct LinkedList<Value> {
     /// O(1)
     @discardableResult
     public mutating func pop() -> Value? {
+        copy()
         head = head?.next
         if isEmpty {
             tail = nil
@@ -87,7 +110,7 @@ public struct LinkedList<Value> {
     /// O(n)
     @discardableResult
     public mutating func removeLast() -> Value? {
-        
+        copy()
         guard let head = head else {
             return nil
         }
@@ -111,6 +134,7 @@ public struct LinkedList<Value> {
     
     @discardableResult
     public mutating func removeAfter(_ node: Node<Value>) -> Value? {
+        copy()
         defer {
             if node.next === tail {
                 tail = node
@@ -295,5 +319,19 @@ extension Example {
 
           let sum = linkedList.reduce(0, +)
           print("Sum of all values: \(sum)")
+    }
+    
+    func nodeExample10() {
+        var linkedList = LinkedList<Int>()
+        linkedList.append(1)
+        linkedList.append(2)
+        var linkedList2 = linkedList
+        print("linkedList: \(linkedList)")
+        print("linkedList2: \(linkedList2)")
+        
+        print("After mutating")
+        linkedList2.append(3)
+        print("List1: \(linkedList)")
+        print("List2: \(linkedList2)")
     }
 }
