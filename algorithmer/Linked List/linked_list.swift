@@ -30,6 +30,7 @@ public struct LinkedList<Value> {
     }
     
     public init() {}
+    
     /// O(1)
     public mutating func push(_ value: Value) {
         head = Node(value: value, next: head)
@@ -37,6 +38,7 @@ public struct LinkedList<Value> {
             tail = head
         }
     }
+    
     /// O(1)
     public mutating func append(_ value: Value) {
         guard !isEmpty else {
@@ -47,7 +49,8 @@ public struct LinkedList<Value> {
         tail!.next = Node(value: value)
         tail = tail!.next
     }
-    /// O(n)
+    
+    /// O(n), where n = given index
     public func node(_ index: Int) -> Node<Value>? {
         var currentNode = head
         var currentIndex = 0
@@ -59,6 +62,7 @@ public struct LinkedList<Value> {
         
         return currentNode
     }
+    
     /// O(1)
     public mutating func insert(_ value: Value, after node: Node<Value>) -> Node<Value> {
         guard tail !== node else {
@@ -68,6 +72,41 @@ public struct LinkedList<Value> {
         node.next = Node(value: value, next: node.next)
         return node.next!
         
+    }
+    
+    /// O(1)
+    @discardableResult
+    public mutating func pop() -> Value? {
+        head = head?.next
+        if isEmpty {
+            tail = nil
+        }
+        return head?.value
+    }
+    
+    /// O(n)
+    @discardableResult
+    public mutating func removeLast() -> Value? {
+        
+        guard let head = head else {
+            return nil
+        }
+        
+        guard head.next != nil else {
+            return pop()
+        }
+        
+        var previous = head
+        var current = head
+        
+        while let next = current.next {
+            previous = current
+            current = next
+        }
+        
+        previous.next = nil
+        tail = previous
+        return current.value
     }
 }
 
@@ -137,11 +176,34 @@ extension Example {
         linkedList.push(2)
         linkedList.push(1)
         
-        print("Before inserting: \(linkedList)")
+        print("Before insert: \(linkedList)")
         var middle = linkedList.node(1)!
         for _ in 1...4 {
             middle = linkedList.insert(-1, after: middle)
         }
-        print("After inserting: \(linkedList)")
+        print("After insert: \(linkedList)")
+    }
+    
+    func nodeExample6() {
+        var linkedList = LinkedList<Int>()
+        linkedList.push(3)
+        linkedList.push(2)
+        linkedList.push(1)
+        print("Before pop: ", linkedList)
+        linkedList.pop()
+        print("After pop: ", linkedList)
+    }
+    
+    func nodeExample7() {
+        var linkedList = LinkedList<Int>()
+        linkedList.push(3)
+        linkedList.push(2)
+        linkedList.push(1)
+        
+        print("Before remove: \(linkedList)")
+        let removed = linkedList.removeLast()
+        
+        print("After remove: \(linkedList)")
+        print("Removed value: " + String(describing: removed))
     }
 }
