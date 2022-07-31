@@ -32,3 +32,9 @@ public struct QueueArray<T>: Queue {
         isEmpty ? nil : array.removeFirst()
     }
 }
+
+extension QueueArray: CustomStringConvertible {
+    public var description: String {
+        String(describing: array)
+    }
+}
