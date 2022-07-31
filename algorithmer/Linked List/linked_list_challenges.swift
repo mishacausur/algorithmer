@@ -151,11 +151,21 @@ extension LinkedList {
     }
     
     mutating func removeAll(_ value: Value) where Value: Equatable {
-        var current = head
-        while tail?.next != nil {
-            if current?.value == value {
-                current = current?.next
-            }
+        while let head = head, head.value == value {
+            self.head = head.next
         }
+        
+        var previous = head
+        var current = head?.next
+        while let currentNode = current {
+            guard currentNode.value != value else {
+                previous?.next = currentNode.next
+                current = previous?.next
+                continue
+            }
+            previous = current
+            current = current?.next
+        }
+        tail = previous
     }
 }
