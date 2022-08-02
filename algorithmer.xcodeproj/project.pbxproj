@@ -17,6 +17,7 @@
 		B613D33A2896BDAF0098351F /* queue.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D3392896BDAF0098351F /* queue.swift */; };
 		B613D33C2896E55A0098351F /* queue_array.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D33B2896E55A0098351F /* queue_array.swift */; };
 		B613D33E2896EA990098351F /* queue_w_linked_list.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D33D2896EA990098351F /* queue_w_linked_list.swift */; };
+		B613D3402899B1670098351F /* double_linked_list.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D33F2899B1670098351F /* double_linked_list.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -43,6 +44,7 @@
 		B613D3392896BDAF0098351F /* queue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = queue.swift; sourceTree = "<group>"; };
 		B613D33B2896E55A0098351F /* queue_array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = queue_array.swift; sourceTree = "<group>"; };
 		B613D33D2896EA990098351F /* queue_w_linked_list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = queue_w_linked_list.swift; sourceTree = "<group>"; };
+		B613D33F2899B1670098351F /* double_linked_list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = double_linked_list.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				B613D3392896BDAF0098351F /* queue.swift */,
 				B613D33B2896E55A0098351F /* queue_array.swift */,
 				B613D33D2896EA990098351F /* queue_w_linked_list.swift */,
+				B613D33F2899B1670098351F /* double_linked_list.swift */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -199,6 +202,7 @@
 				B613D3272892F35A0098351F /* examples.swift in Sources */,
 				B613D3292892F95C0098351F /* challenges.swift in Sources */,
 				B613D3242892F1700098351F /* stack.swift in Sources */,
+				B613D3402899B1670098351F /* double_linked_list.swift in Sources */,
 				B613D33C2896E55A0098351F /* queue_array.swift in Sources */,
 				B613D33A2896BDAF0098351F /* queue.swift in Sources */,
 				B613D3362895AF570098351F /* linked_list_challenges.swift in Sources */,
