@@ -31,3 +31,22 @@ public class QueueLinkedList<T>: Queue {
         list.isEmpty
     }
 }
+
+extension QueueLinkedList: CustomStringConvertible {
+    public var description: String {
+        String(describing: list)
+    }
+}
+
+extension Example {
+    func queueExample1() {
+        var queue = QueueLinkedList<String>()
+        queue.enqueue("Ray")
+        queue.enqueue("Brian")
+        queue.enqueue("Eric")
+        print(queue)
+        queue.dequeue()
+        print(queue)
+        print(queue.peek)
+    }
+}
