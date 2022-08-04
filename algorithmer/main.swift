@@ -10,8 +10,8 @@ import Foundation
 let example = Example()
 //example.stackExample()
 //example.nodeExample10()
-example.queueExample()
-
+//example.queueExample()
+example.queueRBExample()
 let changelles = Challenges()
 //changelles.task1(changelles.array)
 //print(changelles.task2(changelles.testString1))
