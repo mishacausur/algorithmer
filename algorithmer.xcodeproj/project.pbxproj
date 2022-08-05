@@ -20,6 +20,7 @@
 		B613D3402899B1670098351F /* double_linked_list.swift in Sources */ = {isa = PBXBuildFile; fileRef = B613D33F2899B1670098351F /* double_linked_list.swift */; };
 		B689248A289C3EF900AF3C1A /* queue_ring_buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6892489289C3EF900AF3C1A /* queue_ring_buffer.swift */; };
 		B689248C289C439200AF3C1A /* ring_buffer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689248B289C439200AF3C1A /* ring_buffer.swift */; };
+		B689248E289D9D8800AF3C1A /* queue_double_stack.swift in Sources */ = {isa = PBXBuildFile; fileRef = B689248D289D9D8800AF3C1A /* queue_double_stack.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -49,6 +50,7 @@
 		B613D33F2899B1670098351F /* double_linked_list.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = double_linked_list.swift; sourceTree = "<group>"; };
 		B6892489289C3EF900AF3C1A /* queue_ring_buffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = queue_ring_buffer.swift; sourceTree = "<group>"; };
 		B689248B289C439200AF3C1A /* ring_buffer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ring_buffer.swift; sourceTree = "<group>"; };
+		B689248D289D9D8800AF3C1A /* queue_double_stack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = queue_double_stack.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -142,6 +144,7 @@
 				B613D33F2899B1670098351F /* double_linked_list.swift */,
 				B6892489289C3EF900AF3C1A /* queue_ring_buffer.swift */,
 				B689248B289C439200AF3C1A /* ring_buffer.swift */,
+				B689248D289D9D8800AF3C1A /* queue_double_stack.swift */,
 			);
 			path = Queue;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B613D33E2896EA990098351F /* queue_w_linked_list.swift in Sources */,
+				B689248E289D9D8800AF3C1A /* queue_double_stack.swift in Sources */,
 				B613D3272892F35A0098351F /* examples.swift in Sources */,
 				B613D3292892F95C0098351F /* challenges.swift in Sources */,
 				B613D3242892F1700098351F /* stack.swift in Sources */,
