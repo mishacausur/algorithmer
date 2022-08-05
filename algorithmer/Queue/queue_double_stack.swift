@@ -6,3 +6,9 @@
 //
 
 import Foundation
+
+public struct QueueStack<T>: Queue {
+    private var leftStack: [T] = []
+    private var rightStack: [T] = []
+    public init() {}
+}
