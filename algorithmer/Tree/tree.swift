@@ -20,4 +20,13 @@ public class TreeNode<T> {
     }
 }
 
-
+extension Example {
+    func treeExample() {
+        let beverages = TreeNode("BEVERAGES")
+        let hot = TreeNode("HOT")
+        let cold = TreeNode("COLD")
+        
+        beverages.add(hot)
+        beverages.add(cold)
+    }
+}
