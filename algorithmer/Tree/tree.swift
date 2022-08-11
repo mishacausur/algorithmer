@@ -107,4 +107,17 @@ extension Example {
 
       return tree
     }
+    
+    func treeExample3() {
+       let tree = makeBeverageTree()
+        if let search = tree.search("ginger ale") {
+            print("Node is found: \(search.value)")
+        }
+        
+        if let search = tree.search("chocolate milk") {
+            print("Node is found: \(search.value)")
+        } else {
+            print("chocolate mils ain't found")
+        }
+    }
 }
