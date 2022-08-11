@@ -41,6 +41,18 @@ extension TreeNode {
     }
 }
 
+extension TreeNode where T: Equatable {
+    public func search(_ value: T) -> TreeNode? {
+        var result: TreeNode?
+        levelOrder {
+            if $0.value == value {
+                result = $0
+            }
+        }
+        return result
+    }
+}
+
 extension Example {
     func treeExample() {
         let beverages = TreeNode("BEVERAGES")
