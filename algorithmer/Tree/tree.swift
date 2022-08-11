@@ -8,6 +8,8 @@
 import Foundation
 
 public class TreeNode<T> {
+    public typealias NodeClosure = (TreeNode) -> Void
+    
     public var value: T
     public var children: [TreeNode] = []
     
@@ -21,14 +23,14 @@ public class TreeNode<T> {
 }
 
 extension TreeNode {
-    public func depthFirst(visit: (TreeNode) -> Void) {
+    public func depthFirst(visit: NodeClosure) {
         visit(self)
         children.forEach {
             $0.depthFirst(visit: visit)
         }
     }
     
-    public func levelOrder(visit: (TreeNode) -> Void) {
+    public func levelOrder(visit: NodeClosure) {
         visit(self)
         var queue = QueueStack<TreeNode>()
         children.forEach { queue.enqueue($0) }
