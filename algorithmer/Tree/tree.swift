@@ -121,3 +121,9 @@ extension Example {
         }
     }
 }
+
+extension Challenges {
+    /// task 1
+    
+    
+}
