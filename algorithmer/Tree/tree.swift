@@ -125,5 +125,45 @@ extension Example {
 extension Challenges {
     /// task 1
     
+    func treeTask1<T>(_ value: T) {
+        ///1 level
+        let tree = TreeNode(15)
+        
+        ///2 level
+        let one = TreeNode(1)
+        tree.add(one)
+
+        let seventeen = TreeNode(17)
+        tree.add(seventeen)
+
+        let twenty = TreeNode(20)
+        tree.add(twenty)
+        
+        /// 3 level
+        let one2 = TreeNode(1)
+        let five = TreeNode(5)
+        let zero = TreeNode(0)
+        one.add(one2)
+        one.add(five)
+        one.add(zero)
+
+        let two = TreeNode(2)
+        seventeen.add(two)
+
+        let five2 = TreeNode(5)
+        let seven = TreeNode(7)
+        twenty.add(five2)
+        twenty.add(seven)
+        var stack = QueueStack<Int>()
+        rrr(tree: tree, stack: &stack)
+        
+        while let node = stack.dequeue() {
+            print(node)
+        }
+    }
     
+    func rrr<T>(tree: TreeNode<T>, stack: inout QueueStack<T>) {
+        stack.enqueue(tree.value)
+        tree.children.forEach { rrr(tree: $0, stack: &stack) }
+    }
 }
