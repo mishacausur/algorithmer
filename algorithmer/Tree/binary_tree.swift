@@ -8,5 +8,11 @@
 import Foundation
 
 public class BinaryNode<Element> {
+    public var value: Element
+    public var left: BinaryNode?
+    public var right: BinaryNode?
     
+    public init(value: Element) {
+        self.value = value
+    }
 }
