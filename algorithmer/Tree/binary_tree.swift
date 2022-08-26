@@ -30,13 +30,13 @@ extension BinaryNode: CustomStringConvertible {
         guard let node = node else {
             return root + "nil\n"
         }
-        if node.leftChild == nil && node.rightChild == nil {
+        if node.left == nil && node.right == nil {
             return root + "\(node.value)\n"
         }
-        return diagram(for: node.rightChild,
+        return diagram(for: node.right,
                        top + " ", top + "┌──", top + "│ ")
         + root + "\(node.value)\n"
-        + diagram(for: node.leftChild,
+        + diagram(for: node.left,
                   bottom + "│ ", bottom + "└──", bottom + " ")
     }
 }
