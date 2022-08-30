@@ -40,6 +40,14 @@ extension BinaryNode: CustomStringConvertible {
                   bottom + "│ ", bottom + "└──", bottom + " ")
     }
 }
+extension BinaryNode {
+
+  public func traverseInOrder(visit: (Element) -> Void) {
+    left?.traverseInOrder(visit: visit)
+    visit(value)
+    right?.traverseInOrder(visit: visit)
+  }
+}
 
 extension Example {
     func binaryNodeExample() {
